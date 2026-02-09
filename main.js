@@ -41,7 +41,8 @@ let availableIndices = new Set();
 let modelFileMap = new Map(); // Model Name -> Filename
 
 const CSV_FILES = [
-    '/assets/cohere_eval_scoring.csv',
+    '/assets/cohere-8b_eval_scoring.csv',
+    '/assets/cohere-32b_eval_scoring.csv',
     '/assets/magistral_eval_scoring.csv',
     '/assets/qwen_eval_scoring.csv',
     '/assets/sarvam_eval_scoring.csv'
