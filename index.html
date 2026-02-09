@@ -1,0 +1,492 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="description" content="Language Models Entangle Language and Culture">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Language Models Entangle Language and Culture</title>
+
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <!-- Header / Hero Section -->
+  <section class="hero is-light">
+    <div class="hero-body">
+      <div class="container has-text-centered">
+        <!-- Logo at Top Center -->
+        <div class="logo-container">
+          <a href="https://lossfunk.com/" target="_blank">
+            <img src="/assets/logo-removebg-preview.png" alt="Lossfunk Logo">
+          </a>
+        </div>
+
+        <h1 class="title is-1 publication-title mt-4">Language Models Entangle <br> Language and Culture</h1>
+
+        <div class="is-size-4 publication-authors">
+          <span class="author-block">
+            <a href="mailto:shourya.jain@lossfunk.com">Shourya Jain</a>,
+          </span>
+          <span class="author-block">
+            <a href="mailto:paras@lossfunk.com">Paras Chopra</a>
+          </span>
+        </div>
+
+        <div class="is-size-5 publication-authors mt-2">
+          <span class="author-block"><a href="https://lossfunk.com/" target="_blank">Lossfunk</a></span>
+        </div>
+
+        <div class="column has-text-centered">
+          <div class="publication-links">
+            <span class="link-block">
+              <a href="https://arxiv.org/abs/2601.15337" class="external-link button is-medium is-rounded is-dark">
+                <span class="icon"><i class="fas fa-file-pdf"></i></span>
+                <span>Paper</span>
+              </a>
+            </span>
+            <span class="link-block">
+              <a href="https://github.com/Lossfunk/language-culture"
+                class="external-link button is-medium is-rounded is-dark">
+                <span class="icon"><i class="fab fa-github"></i></span>
+                <span>Code</span>
+              </a>
+            </span>
+            <span class="link-block">
+              <a href="https://huggingface.co/datasets/Lossfunk/Multilingual_CulturalBench"
+                class="external-link button is-medium is-rounded is-dark">
+                <span class="icon"><i class="fas fa-database"></i></span>
+                <span>Data</span>
+              </a>
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Tab Navigation -->
+  <div class="section pt-0 pb-0">
+    <div class="container is-max-desktop">
+      <div class="tabs is-centered is-boxed is-medium">
+        <ul>
+          <li class="is-active" data-tab="home"><a>Home</a></li>
+          <li data-tab="methodology"><a>Methodology</a></li>
+          <li data-tab="dataset"><a>Dataset</a></li>
+          <li data-tab="insights"><a>Insights/Analyse</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- HOME TAB -->
+  <div id="home" class="tab-content is-active">
+    <section class="section">
+      <div class="container is-max-widescreen">
+        <!-- GIF -->
+        <div class="columns is-centered has-text-centered">
+          <div class="column is-full">
+            <img src="/assets/visualization.gif" alt="Methodology Visualization"
+              style="width: 100%; border-radius: 10px; box-shadow: 0 4px 8px rgba(0,0,0,0.1);">
+          </div>
+        </div>
+
+        <!-- Abstract -->
+        <div class="columns is-centered has-text-centered">
+          <div class="column is-full">
+            <h2 class="title is-3">Abstract</h2>
+            <p>
+              Users should not be systemically disadvantaged by the language they use for interacting with LLMs; i.e.
+              users across languages should get responses of similar quality irrespective of language used. In this
+              work, we create a set of real-world open-ended questions based on our analysis of the WildChat dataset and
+              use it to evaluate whether responses vary by language, specifically, whether answer quality depends on the
+              language used to query the model. We also investigate how language and culture are entangled in LLMs such
+              that choice of language changes the cultural information and context used in the response by using
+              LLM-as-a-Judge to identify the cultural context present in responses. To further investigate this, we
+              evaluate LLMs on a translated subset of the CulturalBench benchmark across multiple languages. Our
+              evaluations reveal that LLMs consistently provide lower quality answers to open-ended questions in low
+              resource languages. We find that language significantly impacts the cultural context used by the model.
+              This difference in context impacts the quality of the downstream answer.
+            </p>
+          </div>
+        </div>
+
+        <div class="section-divider"></div>
+
+        <!-- Results Images -->
+        <h2 class="title is-3 has-text-centered mt-6">Results</h2>
+
+        <div class="columns is-centered mt-4">
+          <div class="column is-12 has-text-centered"> <!-- Made is-12 for full width -->
+            <img src="/assets/model_comparison.png" alt="Comparison of Response Quality by Language and Model"
+              class="result-image" style="width: 100%; max-width: none;"> <!-- Removed constraints -->
+            <p class="caption">Comparison of Response Quality by Language and Model</p>
+          </div>
+        </div>
+
+        <div class="columns is-centered mt-4">
+          <div class="column is-8 has-text-centered">
+            <!-- Slightly narrower for the heatmap if needed, or keep same -->
+            <img src="/assets/lang-cult.png" alt="Language Culture Entanglement" class="result-image">
+            <p class="caption">Percentage of responses classified to each culture by language</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <!-- METHODOLOGY TAB -->
+  <div id="methodology" class="tab-content" style="display: none;">
+    <section class="section">
+      <div class="container is-max-widescreen">
+        <h2 class="title is-3 has-text-centered">Methodology</h2>
+
+        <!-- Poster Image (PNG) replaced PDF embed -->
+        <div class="box has-text-centered">
+          <img src="/assets/poster-image.png" alt="Poster Overview"
+            style="width: 100%; max-width: none; border-radius: 8px;">
+          <p class="caption">Overview of Evaluation Methodology</p>
+        </div>
+
+        <div class="content mt-6">
+          <div class="columns is-centered">
+            <div class="column is-full">
+              <h3>Evaluation Setup</h3>
+              <p>
+                For each question and language pair, we generate 10 responses per model with temperature set to 1.
+                We evaluate all the responses using LLM as a Judge with the temperature set to 0.
+                Our evaluation covered the following models: Qwen3-14B, Cohere-Aya-32B, Cohere-Aya-8B, Magistral and
+                Sarvam-m.
+              </p>
+              <h3>LLM-as-a-Judge Setup</h3>
+              <p>
+                To ensure the quality of evaluation using LLM-as-a-Judge, we performed several ablations to choose the
+                best
+                configuration. We took a subset of 10 queries from the 20 queries we created and a subset of languages:
+                English, Hindi, Chinese and Hebrew. For each query and language pair, we prompted Cohere-Aya-32B to
+                generate 5 responses, corresponding to scores from 1 to 5 by providing it the rubrics to be used for
+                evaluation. We use these responses for evaluating our Judge and the score corresponding the response as
+                the ground truth score.
+              </p>
+              <p>
+                We use Cohere Command-A model and test 6 configurations of LLM-as-a-Judge:
+              <div class="columns is-multiline is-centered mt-4">
+                <div class="column is-6">
+                  <div class="box has-background-light" style="height: 100%;">
+                    <p class="is-size-5 has-text-centered">(i) Original query along with original response (Baseline)
+                    </p>
+                  </div>
+                </div>
+                <div class="column is-6">
+                  <div class="box has-background-light" style="height: 100%;">
+                    <p class="is-size-5 has-text-centered">(ii) Original query along with response translated to English
+                    </p>
+                  </div>
+                </div>
+                <div class="column is-6">
+                  <div class="box has-background-light" style="height: 100%;">
+                    <p class="is-size-5 has-text-centered">(iii) Query translated to English along with original
+                      response</p>
+                  </div>
+                </div>
+                <div class="column is-6">
+                  <div class="box has-background-light" style="height: 100%;">
+                    <p class="is-size-5 has-text-centered">(iv) Original query and original response along with 2
+                      reference responses as examples</p>
+                  </div>
+                </div>
+                <div class="column is-6">
+                  <div class="box has-background-light" style="height: 100%;">
+                    <p class="is-size-5 has-text-centered">(v) Original query and original response along with 4
+                      reference responses as examples</p>
+                  </div>
+                </div>
+                <div class="column is-6">
+                  <div class="box has-background-light" style="height: 100%;">
+                    <p class="is-size-5 has-text-centered">(vi) Original query and original response along with 8
+                      reference responses as examples</p>
+                  </div>
+                </div>
+              </div>
+              </p>
+              <p>
+                We note that we only provide randomly chosen reference responses to the model without any evaluation,
+                making our methodology different from few-shot prompting and eliminating the need for human evaluated
+                responses for reference. Providing reference examples to the model leads to higher alignment with ground
+                truth scores as evaluated using Pearson correlation and Cohen's Kappa score. Using original query and
+                response along with 8 randomly chosen examples lead to the highest alignment, hence we choose this
+                configuration for our evaluations.
+              </p>
+              <div class="has-text-centered mt-5">
+                <img src="/assets/judge_ablation.png" alt="Judge Ablation Results"
+                  style="width: 100%; max-width: none; border-radius: 8px; box-shadow: 0 4px 8px rgba(0,0,0,0.1);">
+                <p class="caption mt-2">LLM-as-a-Judge Ablation Results</p>
+
+              </div>
+            </div>
+          </div>
+        </div>
+    </section>
+  </div>
+
+  <!-- DATASET TAB -->
+  <div id="dataset" class="tab-content" style="display: none;">
+    <section class="section">
+      <div class="container is-max-widescreen">
+        <h2 class="title is-3 has-text-centered">Dataset: Multilingual CulturalBench</h2>
+
+        <div class="columns is-centered">
+          <div class="column is-full content">
+            <p>
+              We created a set of 20 advice-seeking questions covering a wide variety of topics like Healthcare,
+              Business, and Education for evaluating performance on open-ended tasks. These questions were created based
+              on our analysis of the <a href="https://wildchat.allen.ai/" target="_blank">WildChat Dataset</a>.
+            </p>
+            <p>
+              As part of our analysis, we began with initial filtering and cleaning. From the WildChat dataset, we
+              retained only queries in English and removed queries related to programming bugs or error fixes, as they
+              are niche and skew the dataset. We kept queries with lengths ranging from 40 to 400 characters and
+              excluded duplicate or highly similar queries with a threshold of 60 using the <a
+                href="https://github.com/seatgeek/fuzzywuzzy" target="_blank">fuzzywuzzy</a> library.
+            </p>
+            <p>
+              We converted the queries to embeddings using the Qwen3-0.6b embedding model and clustered them using
+              the HDBSCAN algorithm, followed by manual analysis to create the evaluation queries. The questions were
+              structured in a culture-independent manner. We then translated the queries to Chinese, Hindi, Brazilian
+              Portuguese, Swahili, and Hebrew using the Gemini-2.5-Flash model.
+            </p>
+
+
+          </div>
+        </div>
+
+        <h3 class="title is-4 has-text-centered mt-5">Queries by Category</h3>
+        <div class="columns is-centered">
+          <div class="column is-full">
+            <table class="table is-bordered is-striped is-hoverable is-fullwidth">
+              <thead>
+                <tr>
+                  <th width="15%">Category</th>
+                  <th>Queries</th>
+                </tr>
+              </thead>
+              <tbody class="dataset-table-body">
+                <tr>
+                  <td><strong>Programming Advice</strong></td>
+                  <td>
+                    <ul>
+                      <li>I want to learn {programming language}, can you suggest a plan to start with?</li>
+                      <li>How do I master software engineering and system design concepts?</li>
+                    </ul>
+                  </td>
+                </tr>
+                <tr>
+                  <td><strong>Research Advice</strong></td>
+                  <td>
+                    <ul>
+                      <li>Give me tips and guidelines for writing a good research paper.</li>
+                      <li>I am a beginner in {field} research. Give me ideas for research problems to work on. Provide
+                        ideas along with existing research for reading further.</li>
+                    </ul>
+                  </td>
+                </tr>
+                <tr>
+                  <td><strong>Trading/Investing</strong></td>
+                  <td>
+                    <ul>
+                      <li>What is the best way to do day trading from 100 dollars?</li>
+                      <li>I want to buy a house which is costing me 75lacks and my monthly earning is 50k. Do you have
+                        any suggestions for this?</li>
+                      <li>I want to invest my retirement savings. I have {amount}. How do I split my investment across
+                        equity, real estate, gold, debt?</li>
+                    </ul>
+                  </td>
+                </tr>
+                <tr>
+                  <td><strong>Learning</strong></td>
+                  <td>
+                    <ul>
+                      <li>Give me a study plan to learn {language}.</li>
+                    </ul>
+                  </td>
+                </tr>
+                <tr>
+                  <td><strong>Business/Marketing</strong></td>
+                  <td>
+                    <ul>
+                      <li>I'm looking for a comprehensive business plan to launch a new venture selling printed shirt
+                        designs. This plan should detail the initial setup steps and provide a creative, step-by-step
+                        social media and Instagram strategy to help me become a star in this industry.</li>
+                      <li>Give me 5 tricks about digital marketing on instagram.</li>
+                      <li>Act as a business analyst, brainstorm for me 5 novel business ideas that are able to form a
+                        startup company using NLP technology.</li>
+                      <li>What are the 10 fastest niches in tech growing fast you would focus on to look for problems to
+                        solve and start a startup in?</li>
+                      <li>What are some ways to make money as a 13 year old from home?</li>
+                    </ul>
+                  </td>
+                </tr>
+                <tr>
+                  <td><strong>Job/Interview</strong></td>
+                  <td>
+                    <ul>
+                      <li>Provide me interview questions and answers for {job role} to help me prepare for the
+                        interview.</li>
+                    </ul>
+                  </td>
+                </tr>
+                <tr>
+                  <td><strong>Health/Medicine</strong></td>
+                  <td>
+                    <ul>
+                      <li>Suggest home remedies for {issue}.</li>
+                      <li>How do I improve the quality and duration of my sleep? Give tips and a schedule to follow.
+                      </li>
+                      <li>Over the past few years, I've noticed a significant decline in my memory. This concerns me,
+                        and I worry about the possibility of developing conditions like madness or Alzheimer's in the
+                        future. I'm seeking advice on how to improve my overall well-being, specifically my physical,
+                        brain, and psychological health.</li>
+                      <li>Make me a meal plan of a week's worth of meals. I need 3 meals a day. I must hit a protein
+                        goal of 120 grams of protein everyday, and my calories for each day is 3000 calories. Be as
+                        detailed as possible and include the calorie count and protein count for each meal. I don't eat
+                        meat. Create a grocery list as well.</li>
+                      <li>Give me a workout routine for calisthenics with the split push pull legs upper lower workout
+                        for beginner and with just dumbbells 5-10 kg, pull-up bar, resistance band, bodyweight,
+                        gymnastic rings, and best calories intake for 76kg and 173cm tall.</li>
+                      <li>Create a 30 minute work out routine for beginners that I can do at home.</li>
+                    </ul>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <h3 class="title is-4 has-text-centered mt-6">Translated CulturalBench</h3>
+        <div class="columns is-centered">
+          <div class="column is-full content">
+            <p>
+              We also translated a subset of the CulturalBench dataset to Hindi, Chinese, Brazilian Portuguese, Swahili,
+              and Hebrew to further investigate cultural entanglement. The following graph presents the performance of
+              Qwen3-14b on
+              the Multilingual CulturalBench by language and country of origin.
+            </p>
+            <div class="has-text-centered mt-4">
+              <img src="/assets/cult-bench-multilingual-qwen3-14b.png" alt="CulturalBench Multilingual Results"
+                style="width: 100%; max-width: none; border-radius: 8px; box-shadow: 0 4px 8px rgba(0,0,0,0.1);">
+              <p class="caption mt-2">Qwen3-14b performance on the Multilingual CulturalBench by language and country of
+                origin.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <!-- INSIGHTS TAB (Dashboard) -->
+  <!-- INSIGHTS TAB (Dashboard) -->
+  <div id="insights" class="tab-content" style="display: none;">
+    <section class="section" style="padding: 1.5rem;">
+      <div class="container is-fluid">
+        <h2 class="title is-3 has-text-centered">Response Analysis Dashboard</h2>
+        <div class="content has-text-centered">
+        </div>
+
+        <!-- Selectors -->
+        <div class="box selector-box">
+          <div class="columns is-centered is-vcentered">
+            <div class="column is-3">
+              <div class="field">
+                <label class="label">Choose Model</label>
+                <div class="control">
+                  <div class="select is-fullwidth is-medium is-link">
+                    <select id="model-select">
+                      <option value="">Loading Models...</option>
+                    </select>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="column is-narrow">
+              <!-- Download CSV Button -->
+              <label class="label">&nbsp;</label> <!-- Spacer for alignment -->
+              <a id="download-csv-btn" href="#" class="button is-success is-medium is-outlined" style="display: none;"
+                download>
+                <span class="icon"><i class="fas fa-download"></i></span>
+                <span>Download Raw CSV</span>
+              </a>
+            </div>
+            <div class="column is-6">
+              <div class="field">
+                <label class="label">Choose Query</label>
+                <div class="control">
+                  <div class="select is-fullwidth is-medium is-link">
+                    <select id="query-select">
+                      <option value="">Loading Queries...</option>
+                    </select>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div id="loading-indicator" class="has-text-centered py-6">
+          <span class="icon is-large has-text-info"><i class="fas fa-spinner fa-pulse fa-3x"></i></span>
+          <p class="mt-4 is-size-5">Loading Dataset...</p>
+        </div>
+
+        <!-- Language Grid -->
+        <div id="response-grid" class="columns is-multiline mt-5">
+          <!-- JS will populate 6 language boxes here -->
+          <div class="column is-12 has-text-centered has-text-grey-light">
+            Select a Model and Query to view responses.
+          </div>
+        </div>
+
+      </div>
+    </section>
+  </div>
+
+
+  <section class="section" id="BibTeX">
+    <div class="container is-max-desktop content">
+      <h2 class="title">BibTeX</h2>
+      <pre><code>@misc{jain2026languagemodelsentanglelanguage,
+      title={Language Models Entangle Language and Culture}, 
+      author={Shourya Jain and Paras Chopra},
+      year={2026},
+      eprint={2601.15337},
+      archivePrefix={arXiv},
+      primaryClass={cs.LG},
+      url={https://arxiv.org/abs/2601.15337}, 
+}</code></pre>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="columns is-centered">
+        <div class="column is-8">
+          <div class="content has-text-centered">
+
+            <p>
+              <strong>Contact:</strong>
+              <a href="mailto:shourya.jain@lossfunk.com">shourya.jain@lossfunk.com</a> |
+              <a href="mailto:paras@lossfunk.com">paras@lossfunk.com</a>
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.3.0/papaparse.min.js"></script>
+  <script src="main.js"></script>
+</body>
+
+</html>
