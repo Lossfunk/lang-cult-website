@@ -78,10 +78,11 @@ body {
 }
 
 /* Specific increase for Model Comparison Image */
+/* Specific increase for Model Comparison Image */
 img[src*="model_comparison.png"] {
-  width: 140% !important;
-  max-width: none;
-  margin-left: -20%;
+  width: 100% !important;
+  max-width: 100%;
+  margin-left: 0;
 }
 
 .caption {
