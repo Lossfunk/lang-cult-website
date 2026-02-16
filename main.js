@@ -37,16 +37,12 @@ function initTabs() {
 let allData = {}; // structure: data[model][index][language] = [ {answer, scores...} ]
 let models = new Set();
 let queryMap = new Map(); // index -> English Query String
-let availableIndices = new Set();
-let modelFileMap = new Map(); // Model Name -> Filename
-
-const BASE_URL = import.meta.env.BASE_URL; // Vite provides this relative to base config
 const CSV_FILES = [
-    BASE_URL + 'assets/cohere-8b_eval_scoring.csv',
-    BASE_URL + 'assets/cohere-32b_eval_scoring.csv',
-    BASE_URL + 'assets/magistral_eval_scoring.csv',
-    BASE_URL + 'assets/qwen_eval_scoring.csv',
-    BASE_URL + 'assets/sarvam_eval_scoring.csv'
+    'assets/cohere-8b_eval_scoring.csv',
+    'assets/cohere-32b_eval_scoring.csv',
+    'assets/magistral_eval_scoring.csv',
+    'assets/qwen_eval_scoring.csv',
+    'assets/sarvam_eval_scoring.csv'
 ];
 
 const TARGET_LANGUAGES = ['english', 'hindi', 'chinese', 'swahili', 'hebrew', 'braz-port'];
@@ -87,12 +83,15 @@ async function initDashboard() {
 
     } catch (error) {
         console.error("Dashboard Init Error:", error);
-        loader.innerHTML = `<p class="has-text-danger">Error loading data. Please reload.</p>`;
+        loader.innerHTML = `<p class="has-text-danger">Error loading data: ${error.message}</p>`;
     }
 }
 
 function loadAllCSVs() {
-    const promises = CSV_FILES.map(file => fetch(file).then(res => res.text()));
+    const promises = CSV_FILES.map(file => fetch(file).then(res => {
+        if (!res.ok) throw new Error(`Failed to load ${file}: ${res.statusText}`);
+        return res.text();
+    }));
 
     return Promise.all(promises).then(results => {
         results.forEach((csvText, i) => {
