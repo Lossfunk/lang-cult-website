@@ -37,6 +37,9 @@ function initTabs() {
 let allData = {}; // structure: data[model][index][language] = [ {answer, scores...} ]
 let models = new Set();
 let queryMap = new Map(); // index -> English Query String
+let availableIndices = new Set();
+let modelFileMap = new Map(); // Model Name -> Filename
+
 const CSV_FILES = [
     'assets/cohere-8b_eval_scoring.csv',
     'assets/cohere-32b_eval_scoring.csv',
