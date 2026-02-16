@@ -3,7 +3,7 @@
 body {
   font-family: 'Google Sans', sans-serif;
   background-color: #fcfcfc;
-  font-size: 1.0rem;
+  font-size: 0.9rem;
   /* ~10-15% Text Increase globally */
 }
 
@@ -24,17 +24,17 @@ body {
 
 /* Header Text Sizes */
 .publication-title {
-  font-size: 3.5rem !important;
+  font-size: 2.8rem !important;
   /* Larger Title */
 }
 
 .publication-authors {
-  font-size: 1.5rem !important;
+  font-size: 1.2rem !important;
   /* Larger Authors */
 }
 
 .publication-links .button {
-  font-size: 1.25rem !important;
+  font-size: 1.1rem !important;
   /* Larger Buttons */
 }
 
@@ -55,7 +55,7 @@ body {
 .tabs.is-boxed a {
   color: #4a4a4a;
   font-weight: 500;
-  font-size: 1.35rem;
+  font-size: 1.15rem;
   /* Increased Tab Text size */
   padding: 1.25rem 2.5rem;
 }
@@ -86,7 +86,7 @@ img[src*="model_comparison.png"] {
 
 .caption {
   color: #666;
-  font-size: 1.75rem !important;
+  font-size: 1.0rem !important;
   font-style: italic;
   margin-bottom: 1.5rem;
   line-height: 1.6;
@@ -135,7 +135,7 @@ img[src*="model_comparison.png"] {
   padding: 1.25rem;
   font-family: 'Noto Sans', sans-serif;
   /* Readable font for multilingual text */
-  font-size: 1.25rem !important;
+  font-size: 1.0rem !important;
   /* Increased font size */
   color: #222;
   overflow-y: auto;
@@ -147,7 +147,7 @@ img[src*="model_comparison.png"] {
   background-color: #fff;
   white-space: pre-wrap;
   /* Preserve formatting */
-  font-size: 1.1rem;
+  font-size: 1.0rem;
   /* Increased content text */
   line-height: 1.7;
 }
@@ -176,7 +176,7 @@ img[src*="model_comparison.png"] {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  font-size: 1.1rem;
+  font-size: 1.0rem;
   /* Base size increase */
   border-bottom: 1px dashed #eee;
   padding-bottom: 0.5rem;
@@ -185,7 +185,7 @@ img[src*="model_comparison.png"] {
 .score-label {
   font-weight: 500;
   color: #555;
-  font-size: 1.2rem;
+  font-size: 1.0rem;
   /* Increased label */
 }
 
@@ -197,7 +197,7 @@ img[src*="model_comparison.png"] {
   border-radius: 12px;
   min-width: 40px;
   text-align: center;
-  font-size: 1.4rem;
+  font-size: 1.2rem;
   /* Increased value */
 }
 
@@ -214,12 +214,12 @@ img[src*="model_comparison.png"] {
 
 .dataset-table-body td {
   vertical-align: middle;
-  font-size: 1.15rem;
+  font-size: 1.0rem;
 }
 
 /* BibTeX */
 #BibTeX pre {
-  font-size: 1.2rem;
+  font-size: 1.0rem;
   /* even larger */
   padding: 2rem;
   background-color: #f5f5f5;
@@ -228,13 +228,13 @@ img[src*="model_comparison.png"] {
 
 /* Increase button sizes globally if purely CSS needed (though Bulma uses classes) */
 .button {
-  font-size: 1.1rem;
+  font-size: 1.0rem;
 }
 
 /* Targeted Font Size Increase (approx 50% increase) */
 /* Abstract */
 #home .column.is-full>p {
-  font-size: 1.75rem !important;
+  font-size: 1.25rem !important;
   line-height: 1.6;
 }
 
@@ -242,19 +242,19 @@ img[src*="model_comparison.png"] {
 #methodology .content p,
 #methodology .content ul li,
 #methodology .content ol li {
-  font-size: 1.75rem !important;
+  font-size: 1.15rem !important;
   line-height: 1.6;
 }
 
 /* Data Content (excluding titles and tables) */
 #dataset .content p {
-  font-size: 1.75rem !important;
+  font-size: 1.15rem !important;
   line-height: 1.6;
 }
 
 /* Footer Contact Info */
 .footer .content p,
 .footer .content a {
-  font-size: 1.5rem !important;
+  font-size: 1.15rem !important;
   /* Contact info slightly smaller but still large as requested */
 }
