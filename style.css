@@ -234,21 +234,15 @@ img[src*="model_comparison.png"] {
 
 /* Targeted Font Size Increase (approx 50% increase) */
 /* Abstract */
-#home .column.is-full>p {
+#insights .column.is-full>p {
   font-size: 1.25rem !important;
   line-height: 1.6;
 }
 
-/* Methodology Content (excluding titles) */
-#methodology .content p,
-#methodology .content ul li,
-#methodology .content ol li {
-  font-size: 1.15rem !important;
-  line-height: 1.6;
-}
-
-/* Data Content (excluding titles and tables) */
-#dataset .content p {
+/* Evaluation & Dataset Content (excluding titles) */
+#insights .content p,
+#insights .content ul li,
+#insights .content ol li {
   font-size: 1.15rem !important;
   line-height: 1.6;
 }

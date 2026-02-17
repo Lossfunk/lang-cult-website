@@ -74,17 +74,15 @@
     <div class="container is-max-desktop">
       <div class="tabs is-centered is-boxed is-medium">
         <ul>
-          <li class="is-active" data-tab="home"><a>Home</a></li>
-          <li data-tab="methodology"><a>Methodology</a></li>
-          <li data-tab="dataset"><a>Dataset</a></li>
-          <li data-tab="insights"><a>Insights/Analyse</a></li>
+          <li class="is-active" data-tab="insights"><a>Insights</a></li>
+          <li data-tab="analyse"><a>Analyse</a></li>
         </ul>
       </div>
     </div>
   </div>
 
-  <!-- HOME TAB -->
-  <div id="home" class="tab-content is-active">
+  <!-- INSIGHTS TAB -->
+  <div id="insights" class="tab-content is-active">
     <section class="section">
       <div class="container is-max-widescreen">
         <!-- Abstract -->
@@ -116,127 +114,8 @@
 
         <div class="section-divider"></div>
 
-        <!-- Results Images -->
-        <h2 class="title is-3 has-text-centered mt-6">Results</h2>
-
-        <div class="columns is-centered mt-4">
-          <div class="column is-12 has-text-centered"> <!-- Made is-12 for full width -->
-            <img src="img/model_comparison.png" alt="Comparison of Response Quality by Language and Model"
-              class="result-image" style="width: 100%; max-width: none;"> <!-- Removed constraints -->
-            <p class="caption">Comparison of Response Quality by Language and Model</p>
-          </div>
-        </div>
-
-        <div class="columns is-centered mt-4">
-          <div class="column is-8 has-text-centered">
-            <!-- Slightly narrower for the heatmap if needed, or keep same -->
-            <img src="img/lang-cult.png" alt="Language Culture Entanglement" class="result-image">
-            <p class="caption">Percentage of responses classified to each culture by language</p>
-          </div>
-        </div>
-      </div>
-    </section>
-  </div>
-
-  <!-- METHODOLOGY TAB -->
-  <div id="methodology" class="tab-content" style="display: none;">
-    <section class="section">
-      <div class="container is-max-widescreen">
-        <h2 class="title is-3 has-text-centered">Methodology</h2>
-
-        <!-- Poster Image (PNG) replaced PDF embed -->
-        <div class="box has-text-centered">
-          <img src="img/poster-image.png" alt="Poster Overview"
-            style="width: 100%; max-width: none; border-radius: 8px;">
-          <p class="caption">Overview of Evaluation Methodology</p>
-        </div>
-
-        <div class="content mt-6">
-          <div class="columns is-centered">
-            <div class="column is-full">
-              <h3>Evaluation Setup</h3>
-              <p>
-                For each question and language pair, we generate 10 responses per model with temperature set to 1.
-                We evaluate all the responses using LLM as a Judge with the temperature set to 0.
-                Our evaluation covered the following models: Qwen3-14B, Cohere-Aya-32B, Cohere-Aya-8B, Magistral and
-                Sarvam-m.
-              </p>
-              <h3>LLM-as-a-Judge Setup</h3>
-              <p>
-                To ensure the quality of evaluation using LLM-as-a-Judge, we performed several ablations to choose the
-                best
-                configuration. We took a subset of 10 queries from the 20 queries we created and a subset of languages:
-                English, Hindi, Chinese and Hebrew. For each query and language pair, we prompted Cohere-Aya-32B to
-                generate 5 responses, corresponding to scores from 1 to 5 by providing it the rubrics to be used for
-                evaluation. We use these responses for evaluating our Judge and the score corresponding the response as
-                the ground truth score.
-              </p>
-              <p>
-                We use Cohere Command-A model and test 6 configurations of LLM-as-a-Judge:
-              <div class="columns is-multiline is-centered mt-4">
-                <div class="column is-6">
-                  <div class="box has-background-light" style="height: 100%;">
-                    <p class="is-size-5 has-text-centered">(i) Original query along with original response (Baseline)
-                    </p>
-                  </div>
-                </div>
-                <div class="column is-6">
-                  <div class="box has-background-light" style="height: 100%;">
-                    <p class="is-size-5 has-text-centered">(ii) Original query along with response translated to English
-                    </p>
-                  </div>
-                </div>
-                <div class="column is-6">
-                  <div class="box has-background-light" style="height: 100%;">
-                    <p class="is-size-5 has-text-centered">(iii) Query translated to English along with original
-                      response</p>
-                  </div>
-                </div>
-                <div class="column is-6">
-                  <div class="box has-background-light" style="height: 100%;">
-                    <p class="is-size-5 has-text-centered">(iv) Original query and original response along with 2
-                      reference responses as examples</p>
-                  </div>
-                </div>
-                <div class="column is-6">
-                  <div class="box has-background-light" style="height: 100%;">
-                    <p class="is-size-5 has-text-centered">(v) Original query and original response along with 4
-                      reference responses as examples</p>
-                  </div>
-                </div>
-                <div class="column is-6">
-                  <div class="box has-background-light" style="height: 100%;">
-                    <p class="is-size-5 has-text-centered">(vi) Original query and original response along with 8
-                      reference responses as examples</p>
-                  </div>
-                </div>
-              </div>
-              </p>
-              <p>
-                We note that we only provide randomly chosen reference responses to the model without any evaluation,
-                making our methodology different from few-shot prompting and eliminating the need for human evaluated
-                responses for reference. Providing reference examples to the model leads to higher alignment with ground
-                truth scores as evaluated using Pearson correlation and Cohen's Kappa score. Using original query and
-                response along with 8 randomly chosen examples lead to the highest alignment, hence we choose this
-                configuration for our evaluations.
-              </p>
-              <div class="has-text-centered mt-5">
-                <img src="img/judge_ablation.png" alt="Judge Ablation Results"
-                  style="width: 100%; max-width: none; border-radius: 8px; box-shadow: 0 4px 8px rgba(0,0,0,0.1);">
-                <p class="caption mt-2">LLM-as-a-Judge Ablation Results</p>
-
-              </div>
-            </div>
-          </div>
-        </div>
-    </section>
-  </div>
-
-  <!-- DATASET TAB -->
-  <div id="dataset" class="tab-content" style="display: none;">
-    <section class="section">
-      <div class="container is-max-widescreen">
-        <h2 class="title is-3 has-text-centered">Dataset: Multilingual CulturalBench</h2>
+        <!-- Dataset -->
+        <h2 class="title is-3 has-text-centered mt-6">Dataset</h2>
 
         <div class="columns is-centered">
           <div class="column is-full content">
@@ -258,8 +137,6 @@
               structured in a culture-independent manner. We then translated the queries to Chinese, Hindi, Brazilian
               Portuguese, Swahili, and Hebrew using the Gemini-2.5-Flash model.
             </p>
-
-
           </div>
         </div>
 
@@ -382,13 +259,121 @@
             </div>
           </div>
         </div>
+
+        <div class="section-divider"></div>
+
+        <!-- Evaluation -->
+        <h2 class="title is-3 has-text-centered mt-6">Evaluation</h2>
+
+        <div class="box has-text-centered">
+          <img src="img/poster-image.png" alt="Poster Overview"
+            style="width: 100%; max-width: none; border-radius: 8px;">
+          <p class="caption">Overview of Evaluation Methodology</p>
+        </div>
+
+        <div class="content mt-6">
+          <div class="columns is-centered">
+            <div class="column is-full">
+              <h3>Evaluation Setup</h3>
+              <p>
+                For each question and language pair, we generate 10 responses per model with temperature set to 1.
+                We evaluate all the responses using LLM as a Judge with the temperature set to 0.
+                Our evaluation covered the following models: Qwen3-14B, Cohere-Aya-32B, Cohere-Aya-8B, Magistral and
+                Sarvam-m.
+              </p>
+              <h3>LLM-as-a-Judge Setup</h3>
+              <p>
+                To ensure the quality of evaluation using LLM-as-a-Judge, we performed several ablations to choose the
+                best
+                configuration. We took a subset of 10 queries from the 20 queries we created and a subset of languages:
+                English, Hindi, Chinese and Hebrew. For each query and language pair, we prompted Cohere-Aya-32B to
+                generate 5 responses, corresponding to scores from 1 to 5 by providing it the rubrics to be used for
+                evaluation. We use these responses for evaluating our Judge and the score corresponding the response as
+                the ground truth score.
+              </p>
+              <p>
+                We use Cohere Command-A model and test 6 configurations of LLM-as-a-Judge:
+              <div class="columns is-multiline is-centered mt-4">
+                <div class="column is-6">
+                  <div class="box has-background-light" style="height: 100%;">
+                    <p class="is-size-5 has-text-centered">(i) Original query along with original response (Baseline)
+                    </p>
+                  </div>
+                </div>
+                <div class="column is-6">
+                  <div class="box has-background-light" style="height: 100%;">
+                    <p class="is-size-5 has-text-centered">(ii) Original query along with response translated to English
+                    </p>
+                  </div>
+                </div>
+                <div class="column is-6">
+                  <div class="box has-background-light" style="height: 100%;">
+                    <p class="is-size-5 has-text-centered">(iii) Query translated to English along with original
+                      response</p>
+                  </div>
+                </div>
+                <div class="column is-6">
+                  <div class="box has-background-light" style="height: 100%;">
+                    <p class="is-size-5 has-text-centered">(iv) Original query and original response along with 2
+                      reference responses as examples</p>
+                  </div>
+                </div>
+                <div class="column is-6">
+                  <div class="box has-background-light" style="height: 100%;">
+                    <p class="is-size-5 has-text-centered">(v) Original query and original response along with 4
+                      reference responses as examples</p>
+                  </div>
+                </div>
+                <div class="column is-6">
+                  <div class="box has-background-light" style="height: 100%;">
+                    <p class="is-size-5 has-text-centered">(vi) Original query and original response along with 8
+                      reference responses as examples</p>
+                  </div>
+                </div>
+              </div>
+              </p>
+              <p>
+                We note that we only provide randomly chosen reference responses to the model without any evaluation,
+                making our methodology different from few-shot prompting and eliminating the need for human evaluated
+                responses for reference. Providing reference examples to the model leads to higher alignment with ground
+                truth scores as evaluated using Pearson correlation and Cohen's Kappa score. Using original query and
+                response along with 8 randomly chosen examples lead to the highest alignment, hence we choose this
+                configuration for our evaluations.
+              </p>
+              <div class="has-text-centered mt-5">
+                <img src="img/judge_ablation.png" alt="Judge Ablation Results"
+                  style="width: 100%; max-width: none; border-radius: 8px; box-shadow: 0 4px 8px rgba(0,0,0,0.1);">
+                <p class="caption mt-2">LLM-as-a-Judge Ablation Results</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="section-divider"></div>
+
+        <!-- Results -->
+        <h2 class="title is-3 has-text-centered mt-6">Results</h2>
+
+        <div class="columns is-centered mt-4">
+          <div class="column is-12 has-text-centered">
+            <img src="img/model_comparison.png" alt="Comparison of Response Quality by Language and Model"
+              class="result-image" style="width: 100%; max-width: none;">
+            <p class="caption">Comparison of Response Quality by Language and Model</p>
+          </div>
+        </div>
+
+        <div class="columns is-centered mt-4">
+          <div class="column is-8 has-text-centered">
+            <img src="img/lang-cult.png" alt="Language Culture Entanglement" class="result-image">
+            <p class="caption">Percentage of responses classified to each culture by language</p>
+          </div>
+        </div>
       </div>
     </section>
   </div>
 
-  <!-- INSIGHTS TAB (Dashboard) -->
-  <!-- INSIGHTS TAB (Dashboard) -->
-  <div id="insights" class="tab-content" style="display: none;">
+  <!-- ANALYSE TAB (Dashboard) -->
+  <div id="analyse" class="tab-content" style="display: none;">
     <section class="section" style="padding: 1.5rem;">
       <div class="container is-fluid">
         <h2 class="title is-3 has-text-centered">Response Analysis Dashboard</h2>
