@@ -2,6 +2,19 @@
 document.addEventListener('DOMContentLoaded', () => {
     initTabs();
     initDashboard();
+
+    const btnAnalyse = document.getElementById('btn-analyse-yourself');
+    if(btnAnalyse) {
+        btnAnalyse.addEventListener('click', () => {
+             // Find the analyse tab link
+             const analyseTab = document.querySelector('.tabs li[data-tab="analyse"]');
+             if(analyseTab) {
+                 analyseTab.click();
+                 // Scroll to tabs
+                 document.querySelector('.tabs').scrollIntoView({behavior: 'smooth'});
+             }
+        });
+    }
 });
 
 /* --- TAB NAVIGATION --- */
